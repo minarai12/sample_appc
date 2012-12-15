@@ -98,6 +98,15 @@ describe "Authentication" do
         end
       end
 
+      describe "visiting the following page" do
+        before { visit following_user_path(user) }
+        it { should have_selector('title', text: 'Sign in') }
+      end
+
+      describe "visiting the followers page" do
+        before { visit followers_user_path(user) }
+        it { should have_selector('title', text: 'Sign in') }
+      end
     end
 
 
